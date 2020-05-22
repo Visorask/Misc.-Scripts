@@ -3,10 +3,14 @@
 
 #### Variables ####
 
-logfile="$HOME/logs/plexstats.log"                                                                                     #Change to where you want the logfile to go.
-db="/opt/plex/Library/Application Support/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db"  #Change this to your plex database location.
-docker="plex"                                                                                                          #Change this to the name of your docker. It must match exactly.
-scanner="/usr/lib/plexmediaserver/Plex Media Scanner"                                                                  #Change to the location of your media scanner. This is the default one. It will work for docker and linux.
+#Change to where you want the logfile to go.
+logfile="$HOME/logs/plexstats.log"
+#Change this to your plex database location
+db="/var/lib/plexmediaserver/Library/Application Support/Plex Media Server//Plug-in Support/Databases/com.plexapp.plugins.library.db"
+#Change this to the name of your docker. It must match exactly. If not using then just leave the default.
+docker="plex"    
+#Change to the location of your media scanner. This is the default one. It will work for docker and linux.
+scanner="/usr/lib/plexmediaserver/Plex Media Scanner"                                                                                  
 
 ####End Variables####
 
