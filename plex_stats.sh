@@ -81,15 +81,15 @@ echo "" | tee -a $logfile
 sql_intro() {
 echo "--Skip intro stats:--"
 echo ""
-query="SELECT count(*) FROM media_parts mp JOIN media_items mi on mi.id = mp.media_item_id WHERE mi.library_section_id = 1 and mp.extra_data like '%intros=%';"
+query="SELECT count(*) FROM media_parts mp JOIN media_items mi on mi.id = mp.media_item_id WHERE mi.library_section_id = $id and mp.extra_data like '%intros=%';"
 result=$(sqlite3 -header -line "$db" "$query")
 echo "${result:11} files analyzed for skip intros." | tee -a $logfile
 
-query="SELECT count(*) FROM media_parts mp JOIN media_items mi on mi.id = mp.media_item_id WHERE mi.library_section_id = 1 and mp.extra_data not like '%intros=%';"
+query="SELECT count(*) FROM media_parts mp JOIN media_items mi on mi.id = mp.media_item_id WHERE mi.library_section_id = $id and mp.extra_data not like '%intros=%';"
 result=$(sqlite3 -header -line "$db" "$query")
 echo "${result:11} files that have not been analyzed for skip intros." | tee -a $logfile
 
-query="SELECT count(*) FROM media_parts mp JOIN media_items mi on mi.id = mp.media_item_id WHERE mi.library_section_id = 1 and mp.extra_data like '%intros=%%7B%';"
+query="SELECT count(*) FROM media_parts mp JOIN media_items mi on mi.id = mp.media_item_id WHERE mi.library_section_id = $id and mp.extra_data like '%intros=%%7B%';"
 result=$(sqlite3 -header -line "$db" "$query")
 echo "${result:11} files that actually have skip intros." | tee -a $logfile
 echo ""
