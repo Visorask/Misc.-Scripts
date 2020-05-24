@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/use/bin/env bash
 # Generate Plex Library stats
 
 #### Variables ####
