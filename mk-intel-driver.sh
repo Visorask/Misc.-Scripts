@@ -7,7 +7,7 @@ echo "$(date "+%d.%m.%Y %T") INFO: *** Creating master directory. ***"
 mkdir intel-driver
 cd "$HOME/intel-driver"
 echo "$(date "+%d.%m.%Y %T") INFO: *** Installing prerequisites needed to build the iHD driver. ***"
-sudo apt-get install software-properties-common autoconf libtool libdrm-dev xorg xorg-dev openbox libx11-dev libgl1-mesa-glx libgl1-mesa-dev xutils-dev build-essential cmake
+sudo apt-get install -y software-properties-common autoconf libtool libdrm-dev xorg xorg-dev openbox libx11-dev libgl1-mesa-glx libgl1-mesa-dev xutils-dev build-essential cmake
 echo "$(date "+%d.%m.%Y %T") INFO: *** Cloning libva git. ***"
 git clone "https://github.com/intel/libva.git"
 cd "$HOME/intel-driver/libva"
